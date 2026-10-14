@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#075e54">
+<meta name="description" content="Nexa Chat — سادہ عالمی آن لائن چیٹ">
+<link rel="manifest" href="./manifest.webmanifest">
+<title>Nexa Chat</title>
+<style>
+:root{--green:#075e54;--teal:#128c7e;--bg:#eef4f1;--line:#dfe9e4;--text:#17302a;--muted:#6d7e78;--bubble:#d8fdd2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;background:var(--green);color:white;font-weight:650}button.secondary{background:#e5f1ec;color:var(--green)}button:disabled{opacity:.5;cursor:wait}
+.shell{max-width:1160px;margin:0 auto;min-height:100dvh;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--green);color:#fff;border-radius:20px 20px 0 0;padding:17px 22px}.brand{display:flex;align-items:center;gap:12px}.mark{display:grid;place-items:center;background:#ffffff22;border-radius:14px;width:44px;height:44px;font-size:23px}.brand h1{font-size:22px;margin:0}.brand p{font-size:12px;margin:3px 0 0;opacity:.8}.layout{display:grid;grid-template-columns:310px 1fr;min-height:calc(100dvh - 125px);background:white;border-radius:0 0 20px 20px;overflow:hidden;box-shadow:0 12px 36px #1c403312}.side{border-left:1px solid var(--line);display:flex;flex-direction:column;min-width:0}.side-head{padding:16px;border-bottom:1px solid var(--line)}.side-head input{width:100%}input{border:1px solid #d8e4de;border-radius:12px;padding:12px;background:#fff;color:var(--text);outline:none;min-width:0}input:focus{border-color:var(--teal);box-shadow:0 0 0 3px #128c7e17}.auth{padding:22px;max-width:520px;margin:30px auto;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 30px #123e2b0a}.auth h2{margin-top:0}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;color:var(--muted)}.row{display:flex;gap:8px;align-items:center}.row>*{min-width:0}.row input{flex:1;width:100%}.note{font-size:12px;color:var(--muted);line-height:1.6}.error{color:#b42318;font-size:13px;white-space:pre-wrap}.success{color:#087443;font-size:13px}.user-bar{padding:14px 16px;background:#f7faf8;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:center}.user-bar .who{flex:1;min-width:0}.user-bar small{display:block;color:var(--muted);overflow-wrap:anywhere}.contacts{overflow:auto}.contact{padding:14px 16px;display:flex;gap:11px;align-items:center;border-bottom:1px solid #f1f4f2;cursor:pointer}.contact:hover,.contact.active{background:#edf7f3}.avatar{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#128c7e,#83d5ba);color:white;font-weight:800}.cinfo{min-width:0;flex:1}.cname{font-weight:750}.cpreview{font-size:12px;color:var(--muted);margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.main{display:flex;flex-direction:column;min-width:0;background:#f8fbf9}.chathead{padding:14px 18px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:11px}.chathead .meta{flex:1}.chathead h2{font-size:16px;margin:0}.chathead p{font-size:12px;color:var(--muted);margin:4px 0 0}.messages{flex:1;min-height:330px;max-height:calc(100dvh - 275px);overflow:auto;padding:20px;display:flex;flex-direction:column;gap:10px}.empty{margin:auto;text-align:center;max-width:360px;color:var(--muted);line-height:1.8}.bubble{max-width:82%;padding:10px 13px;border-radius:14px;overflow-wrap:anywhere;white-space:pre-wrap;line-height:1.55;box-shadow:0 1px 2px #00000008}.bubble.mine{align-self:flex-end;background:var(--bubble);border-top-left-radius:4px}.bubble.theirs{align-self:flex-start;background:white;border:1px solid #e8efeb;border-top-right-radius:4px}.bubble small{display:block;font-size:10px;color:#73827b;margin-top:5px}.compose{padding:12px;border-top:1px solid var(--line);display:flex;gap:8px;background:#fff}.compose input{flex:1}.notice{padding:10px 16px;background:#fff7db;color:#755b17;font-size:12px;line-height:1.5}.hidden{display:none!important}
+@media(max-width:720px){.shell{padding:0}.top{border-radius:0;padding:13px 15px}.layout{display:block;min-height:calc(100dvh - 72px);border-radius:0}.side{height:calc(100dvh - 72px);border:0}.main{height:calc(100dvh - 72px);display:none}.layout.chat-open .side{display:none}.layout.chat-open .main{display:flex}.messages{max-height:none;padding:14px}.bubble{max-width:90%}.auth{margin:20px 12px;padding:18px}.brand h1{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="shell">
+ <header class="top"><div class="brand"><div class="mark">✦</div><div><h1>Nexa Chat</h1><p>سادہ، تیز، آن لائن چیٹ</p></div></div><button class="secondary hidden" id="logoutTop">لاگ آؤٹ</button></header>
+ <section id="auth" class="auth">
+  <h2 id="authTitle">Nexa Chat میں خوش آمدید</h2>
+  <p class="note">اکاؤنٹ بنائیں یا لاگ اِن کریں۔ حقیقی آن لائن چیٹ کے لیے Firebase config درکار ہے۔</p>
+  <div class="field"><label for="email">ای میل</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+  <div class="field"><label for="password">پاس ورڈ (کم از کم 6 حروف)</label><input id="password" type="password" autocomplete="current-password" placeholder="••••••••"></div>
+  <div id="usernameField" class="field"><label for="username">یوزر نیم (3–20 انگریزی حروف/نمبر/underscore)</label><input id="username" maxlength="20" placeholder="مثلاً faisal_01"></div>
+  <div class="row"><button id="signup">نیا اکاؤنٹ بنائیں</button><button id="login" class="secondary">لاگ اِن</button></div>
+  <p id="authMsg" class="error"></p>
+  <p class="note">ڈیمو/ابتدائی ورژن۔ پاس ورڈ کسی کے ساتھ شیئر نہ کریں۔</p>
+ </section>
+ <section id="app" class="layout hidden">
+  <aside class="side">
+   <div class="user-bar"><div class="avatar" id="myAvatar">N</div><div class="who"><strong id="myName">میرا اکاؤنٹ</strong><small id="myEmail"></small></div><button id="logout" class="secondary">باہر</button></div>
+   <div class="side-head"><div class="row"><input id="findUser" placeholder="یوزر نیم تلاش کریں"><button id="searchUser">تلاش</button></div><p class="note">کسی رجسٹرڈ صارف کا پورا یوزر نیم لکھیں۔</p><p id="searchMsg" class="error"></p></div>
+   <div class="contacts" id="contacts"><div class="empty" style="padding:22px">ابھی کوئی چیٹ منتخب نہیں۔</div></div>
+  </aside>
+  <main class="main">
+   <div class="chathead"><button id="back" class="secondary" style="display:none">واپس</button><div class="avatar" id="peerAvatar">?</div><div class="meta"><h2 id="peerName">چیٹ منتخب کریں</h2><p id="peerStatus">محفوظ کنکشن کے لیے اکاؤنٹ استعمال کریں</p></div></div>
+   <div class="notice">اس MVP میں ٹیکسٹ چیٹ شامل ہے۔ یہ end-to-end encrypted نہیں؛ عوامی لانچ سے پہلے سکیورٹی جائزہ ضروری ہے۔</div>
+   <div id="messages" class="messages"><div class="empty"><div style="font-size:42px">✦</div><strong>اپنی پہلی چیٹ شروع کریں</strong><br>اوپر سے کسی صارف کو تلاش کریں۔</div></div>
+   <form id="compose" class="compose"><input id="message" maxlength="4000" placeholder="پیغام لکھیں…" autocomplete="off" disabled><button id="send" disabled>بھیجیں</button></form>
+  </main>
+ </section>
+ <p class="note" style="text-align:center;padding:10px">Nexa Chat MVP · کسی بھی ملک میں استعمال کے لیے مناسب hosting، rules اور قانونی شرائط مکمل کریں۔</p>
+</div>
+<script type="module" src="./app.js"></script>
+</body></html>
